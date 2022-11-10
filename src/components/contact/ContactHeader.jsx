@@ -1,16 +1,16 @@
 /* This example requires Tailwind CSS v2.0+ */
 export default function ContactHeader() {
 	return (
-		<div className="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">
-			<div className="relative bg-indigo-800">
+		<div className="max-w-7xl mx-auto pb-16 px-4 pt-2 sm:px-6 lg:px-8">
+			<div className="relative bg-indigo-800 rounded-3xl shadow-2xl">
 				<div className="absolute inset-0">
 					<img
-						className="w-full h-full object-cover"
+						className="w-full h-full object-cover rounded-3xl"
 						src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
 						alt=""
 					/>
 					<div
-						className="absolute inset-0 bg-indigo-800 mix-blend-multiply"
+						className="absolute inset-0 bg-indigo-800 mix-blend-multiply rounded-3xl"
 						aria-hidden="true"
 					/>
 				</div>
