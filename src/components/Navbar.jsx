@@ -16,6 +16,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 const solutions = [
   {
@@ -126,7 +127,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
+            <a href="/">
               <span className="sr-only">Workflow</span>
               <img
                 className="h-8 w-auto sm:h-10"
@@ -151,7 +152,11 @@ export default function Navbar() {
                       "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
                     )}
                   >
-                    <span>About Us</span>
+                    <Link to="/about">
+                      {" "}
+                      <span>About Us</span>
+                    </Link>
+
                     <ChevronDownIcon
                       className={classNames(
                         open ? "text-gray-600" : "text-gray-400",
@@ -218,13 +223,13 @@ export default function Navbar() {
             </Popover>
 
             <a
-              href="#"
+              href="/publication"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Our Publications
             </a>
             <a
-              href="#"
+              href="/contact"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Contact Us
