@@ -8,9 +8,9 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ContactHeader from './components/ContactHeader';
-import ContactForm from './components/ContactForm';
-import ContactGrid from './components/ContactGrid';
+import Home from './pages/home/Home';
+import Publication from './pages/publication/Publication';
+import Contact from './pages/contact/Contact';
 
 const App = () => {
   return (
@@ -19,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/publication" element={<Publication />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
