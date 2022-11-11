@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 export default function ContactHeader() {
 	return (
-		<div className="max-w-7xl mx-auto pb-16 px-4 pt-2 sm:px-6 lg:px-8">
+		<div className="max-w-7xl mx-auto pb-16 px-4 pt-8 sm:px-6 lg:px-8">
 			<div className="relative bg-indigo-800 rounded-3xl shadow-2xl">
 				<div className="absolute inset-0">
 					<img
