@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const Publication = () => {
   const [books, setBooks] = useState([]);
+  const loc = useLocation();
+  console.log(loc);
 
   useEffect(() => {
     fetchBooks();
