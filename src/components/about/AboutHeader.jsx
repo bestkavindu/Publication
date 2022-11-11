@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -28,7 +27,7 @@ export default function Example() {
 						<div className="relative pt-6 "></div>
 						<main className="mt-10 mx-auto sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
 							<div className="sm:text-center lg:text-left">
-								<h1 className="text-4xl tracking-tight font-bold font-poppins text-gray-900 sm:text-5xl md:text-6xl">
+								<h1 className="text-4xl tracking-tight font-bold  text-gray-900 sm:text-5xl md:text-6xl">
 									<span className="block xl:inline">About Us</span>{" "}
 									<span className="block text-indigo-600 xl:inline">
 										Publications
