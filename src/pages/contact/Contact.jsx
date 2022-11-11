@@ -7,7 +7,7 @@ import ContactHeader from "../../components/contact/ContactHeader";
 const Contact = () => {
 	return (
         <AnimatedPage>
-		<div className="">
+		<div className="py-12 lg:py-20">
 			<ContactHeader />
 			<ContactGrid />
 			<ContactForm />

@@ -36,7 +36,7 @@ const Publication = () => {
   ];
   return (
     <AnimatedPage>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-screen ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-screen py-12 lg:py-20">
         <ul
           role="list"
           className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 py-10"
