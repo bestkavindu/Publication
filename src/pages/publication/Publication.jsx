@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AnimatedPage from './../../components/AnimatedPage';
 
 const Publication = () => {
 	const [books, setBooks] = useState([]);
@@ -33,6 +34,7 @@ const Publication = () => {
 		},
 	];
 	return (
+    <AnimatedPage>
 		<div className="max-w-7xl mx-auto px-4 sm:px-6 h-screen">
 			<ul
 				role="list"
@@ -63,6 +65,7 @@ const Publication = () => {
 				))}
 			</ul>
 		</div>
+    </AnimatedPage>
 	);
 };
 
