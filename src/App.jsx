@@ -12,8 +12,6 @@ import Footer from "./components/Footer";
 import Publication from "./pages/publication/Publication";
 import Home from "./pages/home/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Home from "./pages/home/Home";
-import Publication from "./pages/publication/Publication";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 

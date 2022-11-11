@@ -11,7 +11,7 @@ const navigation = [
 
 export default function Example() {
 	return (
-		<div className="max-w-7xl mx-auto px-4 lg:px-0 lg:pr-6">
+		<div className="max-w-7xl mx-auto px-4 lg:px-0 lg:pr-6 py-6 sm:py-12 lg:py-20">
 			<div className="relative bg-white overflow-hidden">
 				<div className="max-w-7xl mx-auto">
 					<div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
