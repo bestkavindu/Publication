@@ -222,18 +222,18 @@ export default function Navbar() {
               )}
             </Popover>
 
-            <a
-              href="/publication"
+            <Link to="/publication"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
-              Our Publications
-            </a>
-            <a
-              href="/contact"
+              {" "}
+              <span>Our Publications</span>
+            </Link>
+            <Link to="/contact"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
-              Contact Us
-            </a>
+              {" "}
+              <span>Contact Us</span>
+            </Link>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <a

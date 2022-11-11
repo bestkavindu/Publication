@@ -8,8 +8,10 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Publication from "./pages/publication/Publication";
-import Home from "./pages/home/Home";
+import Home from './pages/home/Home';
+import Publication from './pages/publication/Publication';
+import Contact from './pages/contact/Contact';
+import About from './pages/about/About';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/publication" element={<Publication />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </BrowserRouter>
