@@ -7,7 +7,7 @@ import ContactHeader from "../../components/contact/ContactHeader";
 const Contact = () => {
 	return (
         <AnimatedPage>
-		<div>
+		<div className="">
 			<ContactHeader />
 			<ContactGrid />
 			<ContactForm />

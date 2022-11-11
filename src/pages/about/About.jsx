@@ -9,7 +9,7 @@ import LogoCloud from "../../components/about/LogoClouds";
 const About = () => {
 	return (
 		<AnimatedPage>
-			<div className="font-poppins">
+			<div className="">
 				<AboutHeader />
 				<CTA />
 				<Stats />
