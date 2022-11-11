@@ -62,19 +62,19 @@ const mobilenav = [
 		name: "About Us",
 		description:
 			"Get a better understanding of where your traffic is coming from.",
-		href: "#",
+		to: "/about",
 		icon: ChartBarIcon,
 	},
 	{
 		name: "Our Publications",
 		description: "Speak directly to your customers in a more meaningful way.",
-		href: "#",
+		to: "publication",
 		icon: CursorClickIcon,
 	},
 	{
 		name: "Contact Us",
 		description: "Your customers' data will be safe and secure.",
-		href: "#",
+		to: "contact",
 		icon: ShieldCheckIcon,
 	},
 ];
@@ -262,9 +262,9 @@ export default function Navbar() {
 							<div className="mt-6">
 								<nav className="grid gap-y-8">
 									{mobilenav.map((item) => (
-										<a
+										<Link
 											key={item.name}
-											href={item.href}
+											to={item.to}
 											className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
 										>
 											<item.icon
@@ -274,7 +274,7 @@ export default function Navbar() {
 											<span className="ml-3 text-base font-medium text-gray-900">
 												{item.name}
 											</span>
-										</a>
+										</Link>
 									))}
 								</nav>
 							</div>
