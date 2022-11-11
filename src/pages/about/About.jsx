@@ -1,14 +1,20 @@
 import React from "react";
 import AnimatedPage from "./../../components/AnimatedPage";
 import AboutHeader from "./../../components/about/AboutHeader";
-import Sample from "../../components/about/CTA";
+import CTA from "../../components/about/CTA";
+import Stats from "../../components/about/Stats";
+import AboutHero from './../../components/about/AboutHero';
+import LogoCloud from "../../components/about/LogoClouds";
 
 const About = () => {
 	return (
 		<AnimatedPage>
-			<div>
+			<div className="font-poppins">
 				<AboutHeader />
-				<Sample />
+				<CTA />
+				<Stats />
+				<AboutHero />
+				<LogoCloud />
 			</div>
 		</AnimatedPage>
 	);
