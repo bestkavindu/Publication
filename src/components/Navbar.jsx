@@ -1,6 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Popover, Transition, Menu } from "@headlessui/react";
+import React, { useState, useEffect, Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
   CalendarIcon,
@@ -18,34 +20,34 @@ import {
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 
-const solutions = [
+const mainnav = [
   {
-    name: "Analytics",
+    name: "Vission",
     description:
       "Get a better understanding of where your traffic is coming from.",
     href: "#",
     icon: ChartBarIcon,
   },
   {
-    name: "Engagement",
+    name: "Mission",
     description: "Speak directly to your customers in a more meaningful way.",
     href: "#",
     icon: CursorClickIcon,
   },
   {
-    name: "Security",
+    name: "Values",
     description: "Your customers' data will be safe and secure.",
     href: "#",
     icon: ShieldCheckIcon,
   },
   {
-    name: "Integrations",
+    name: "Upcoming Projects",
     description: "Connect with third-party tools that you're already using.",
     href: "#",
     icon: ViewGridIcon,
   },
   {
-    name: "Automations",
+    name: "Publications",
     description:
       "Build strategic funnels that will drive your customers to convert",
     href: "#",
@@ -100,6 +102,8 @@ const recentPosts = [
     href: "#",
   },
   { id: 3, name: "Improve your customer experience", href: "#" },
+  { name: "Facebook", href: "#", icon: PlayIcon },
+  { name: "Contact Us", href: "#", icon: PhoneIcon },
 ];
 
 const mobilenav = [
@@ -107,19 +111,19 @@ const mobilenav = [
     name: "About Us",
     description:
       "Get a better understanding of where your traffic is coming from.",
-    href: "#",
+    to: "/about",
     icon: ChartBarIcon,
   },
   {
     name: "Our Publications",
     description: "Speak directly to your customers in a more meaningful way.",
-    href: "#",
+    to: "publication",
     icon: CursorClickIcon,
   },
   {
     name: "Contact Us",
     description: "Your customers' data will be safe and secure.",
-    href: "#",
+    to: "contact",
     icon: ShieldCheckIcon,
   },
 ];
@@ -129,10 +133,22 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const [top, setTop] = useState(true);
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.pageYOffset > 50 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
   return (
-    <Popover className="sticky top-0 z-50 bg-white">
+    <Popover
+      className={`fixed w-full top-0 z-50 transition duration-300 ease-in-out ${
+        !top && "opacity-90 bg-white shadow-xl"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-b-2 border-none py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link to="/">
               <span className="sr-only">Workflow</span>
@@ -185,7 +201,7 @@ export default function Navbar() {
                     <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                          {solutions.map((item) => (
+                          {mainnav.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
@@ -229,21 +245,21 @@ export default function Navbar() {
               )}
             </Popover>
 
-            <a
-              href="/publication"
+            <Link
+              to="/publication"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Our Publications
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Contact Us
-            </a>
+            </Link>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            {/* <a
+            <a
               href="#"
               className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
             >
@@ -261,62 +277,7 @@ export default function Navbar() {
                   d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-            </a> */}
-
-            <Menu as="div" className="ml-3 relative">
-              <div>
-                <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  <span className="sr-only">Open user menu</span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </Menu.Button>
-              </div>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <Menu.Item>
-                    <a
-                      href="/dashboard"
-                      className={classNames(
-                        "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
-                      )}
-                    >
-                      Dashboard
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      href="/login"
-                      className={classNames(
-                        "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
-                      )}
-                    >
-                      LogIn
-                    </a>
-                  </Menu.Item>
-                </Menu.Items>
-              </Transition>
-            </Menu>
+            </a>
           </div>
         </div>
       </div>
@@ -354,9 +315,9 @@ export default function Navbar() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {mobilenav.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.to}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
                       <item.icon
@@ -366,7 +327,7 @@ export default function Navbar() {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         {item.name}
                       </span>
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
