@@ -87,13 +87,13 @@ export default function Navbar() {
 	const [top, setTop] = useState(true);
 	useEffect(() => {
 		const scrollHandler = () => {
-		  window.pageYOffset > 50 ? setTop(false) : setTop(true)
+		  window.pageYOffset > 10 ? setTop(false) : setTop(true)
 		};
 		window.addEventListener('scroll', scrollHandler);
 		return () => window.removeEventListener('scroll', scrollHandler);
 	  }, [top]);  
 	return (
-		<Popover className={`fixed w-full top-0 z-50 transition duration-300 ease-in-out ${!top && 'opacity-90 bg-white shadow-xl'}`}>
+		<Popover className={`fixed w-full top-0 z-40 transition duration-300 ease-in-out ${!top && 'opacity-90 bg-white shadow-xl'}`}>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6">
 				<div className="flex justify-between items-center border-b-2 border-none py-6 md:justify-start md:space-x-10">
 					<div className="flex justify-start lg:w-0 lg:flex-1">
@@ -102,7 +102,7 @@ export default function Navbar() {
 							<img
 								className="h-8 w-auto sm:h-10"
 								src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-								alt=""
+								alt="DIGITAL LIBRARY LOGO"
 							/>
 						</Link>
 					</div>
@@ -119,7 +119,7 @@ export default function Navbar() {
 									<Popover.Button
 										className={classNames(
 											open ? "text-gray-900" : "text-gray-500",
-											"group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
+											"group bg-transparent opacity-90 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
 										)}
 									>
 										<Link to="/about">
@@ -240,7 +240,7 @@ export default function Navbar() {
 			>
 				<Popover.Panel
 					focus
-					className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+					className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50"
 				>
 					<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
 						<div className="pt-5 pb-6 px-5">
