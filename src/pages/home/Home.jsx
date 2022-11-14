@@ -5,7 +5,7 @@ import Main from './../../components/home/Main';
 const Home = () => {
 	return (
 		<AnimatedPage>
-			<div className="h-screen">
+			<div className="main-bg h-full">
 				<Main />
 			</div>
 		</AnimatedPage>
