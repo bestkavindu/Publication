@@ -17,6 +17,7 @@ import {
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
+import Logo from "../assets/react.svg";
 
 const mainnav = [
 	{
@@ -101,7 +102,7 @@ export default function Navbar() {
 							<span className="sr-only">Workflow</span>
 							<img
 								className="h-8 w-auto sm:h-10"
-								src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+								src="/vite.svg"
 								alt="DIGITAL LIBRARY LOGO"
 							/>
 						</Link>
