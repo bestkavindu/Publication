@@ -181,6 +181,14 @@
 	}
 }
 
+.phone {
+	position: relative;
+}
+
+.phone > div {
+	position: absolute;
+}
+
 .shine {
 	-webkit-mask-image: linear-gradient(
 		-25deg,

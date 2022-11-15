@@ -1,14 +1,16 @@
 import React from "react";
-import AnimatedPage from "../../components/AnimatedPage";
-import Main from './../../components/home/Main';
+import AnimatedPageTwo from "../../components/AnimatedPageTwo";
+import Phone from "../../components/home/Phone";
+import Main from "./../../components/home/Main";
+import Blog from './../../components/home/Blog';
 
 const Home = () => {
 	return (
-		<AnimatedPage>
-			<div className="main-bg h-full">
+		<div className="main-bg">
+			<AnimatedPageTwo>
 				<Main />
-			</div>
-		</AnimatedPage>
+			</AnimatedPageTwo>
+		</div>
 	);
 };
 
