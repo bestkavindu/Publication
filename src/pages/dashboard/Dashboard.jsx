@@ -28,6 +28,9 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import { SearchIcon } from "@heroicons/react/solid";
+import axios from "axios";
+import DashboardForm from "../../components/dashboard/DashboardForm";
+import Table from "../../components/dashboard/DataTable";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -51,6 +54,29 @@ export default function Dashboard(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   props.funcNav(false);
+  const [name, setName] = useState("");
+  const [file, setFile] = useState(null);
+
+  const handleChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const hadleClick = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("file", file);
+
+    await axios
+      .post("http://localhost:8000/api/add-student", formData)
+      .then(({ data }) => {
+        alert("success");
+      })
+      .catch(({ response }) => {
+        alert("err");
+      });
+  };
 
   return (
     <>
@@ -277,10 +303,33 @@ export default function Dashboard(props) {
               </div>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                 {/* Replace with your content */}
-                <div className="py-4">
+
+                {/* <div className="py-4">
                   <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-                </div>
+
+                </div> */}
                 {/* /End replace */}
+                {/* <form onSubmit={hadleClick}>
+                  <input
+                    type="text"
+                    name="name"
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                    placeholder="name"
+                  />
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={handleChange}
+                    placeholder="name"
+                  />
+                  <button type="submit">submit</button>
+                </form> */}
+                <div className="mt-8">
+                  <DashboardForm />
+                  <Table />
+                </div>
               </div>
             </div>
           </main>

@@ -14,6 +14,7 @@ import Home from "./pages/home/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
+import Login from "./pages/login/Login";
 
 const App = () => {
   const [showNav, setShowNav] = useState(true);
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard funcNav={setShowNav} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>
