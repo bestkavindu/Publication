@@ -9,26 +9,28 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Login from "./pages/login/Login";
 import { AnimatePresence } from "framer-motion";
+import Frontend from "./layouts/Frontend";
+import Backend from "./layouts/BackendLayout";
+import DashboardIndex from "./pages/dashboard/publications";
 
 const App = () => {
-  const [showNav, setShowNav] = useState(true);
   const location = useLocation();
-  console.log(location);
   return (
     <div>
-      {showNav && <Navbar />}
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/publication" element={<Publication />} />
-          <Route
-            path="/dashboard"
-            element={<Dashboard funcNav={setShowNav} />}
-          />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Frontend />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/publication" element={<Publication />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+
+          <Route path="/dashboard" element={<Backend />}>
+            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+            <Route path="/dashboard/view-publication" element={<Dashboard />} />
+          </Route>
         </Routes>
-        <Footer />
       </AnimatePresence>
     </div>
   );
