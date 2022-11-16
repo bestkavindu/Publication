@@ -11,7 +11,9 @@ import Login from "./pages/login/Login";
 import { AnimatePresence } from "framer-motion";
 import Frontend from "./layouts/Frontend";
 import Backend from "./layouts/BackendLayout";
-import DashboardIndex from "./pages/dashboard/publications";
+import DashboardIndex from "./pages/dashboard/publications/PublicationIndex";
+import CreatePublication from "./pages/dashboard/publications/CreatePublication";
+import PublicationIndex from "./pages/dashboard/publications/PublicationIndex";
 
 const App = () => {
   const location = useLocation();
@@ -28,7 +30,14 @@ const App = () => {
 
           <Route path="/dashboard" element={<Backend />}>
             {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-            <Route path="/dashboard/view-publication" element={<Dashboard />} />
+            <Route
+              path="/dashboard/view-publication"
+              element={<PublicationIndex />}
+            />
+            <Route
+              path="/dashboard/add-publication"
+              element={<CreatePublication />}
+            />
           </Route>
         </Routes>
       </AnimatePresence>
