@@ -141,7 +141,7 @@ export default function Navbar() {
 		return () => window.removeEventListener('scroll', scrollHandler);
 	  }, [top]);  
 	return (
-		<Popover className={`fixed w-full top-0 z-40 transition duration-300 ease-in-out ${!top && 'opacity-90 bg-white shadow-xl'}`}>
+		<Popover className={`fixed w-full top-0 z-40 transition duration-300 ease-in-out ${!top && 'opacity-100 bg-white shadow-xl'}`}>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6">
 				<div className="flex justify-between items-center border-b-2 border-none py-6 md:justify-start md:space-x-10">
 					<div className="flex justify-start lg:w-0 lg:flex-1">
