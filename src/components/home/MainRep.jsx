@@ -2,37 +2,10 @@ import Phone from "../../assets/img/screen.png";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Parallax } from "react-scroll-parallax";
-import Likes from "./Likes";
 
-const Main = () => {
-	const [phoneTop, phoneSetTop] = useState(true);
-	useEffect(() => {
-		const scrollHandler = () => {
-			window.pageYOffset > 900 ? phoneSetTop(false) : phoneSetTop(true);
-		};
-		window.addEventListener("scroll", scrollHandler);
-		return () => window.removeEventListener("scroll", scrollHandler);
-	}, [phoneTop]);
-
-	const [bottom, setBottom] = useState(true);
-	useEffect(() => {
-		const scrollHandler = (e) => {
-			const scrollable =
-				document.documentElement.scrollHeight - window.innerHeight;
-			const scrolled = window.scrollY;
-			let scrolledRounded = Math.round(scrolled);
-
-			if (scrolledRounded === scrollable) {
-				setBottom(false);
-			} else {
-				setBottom(true);
-			}
-		};
-		window.addEventListener("scroll", scrollHandler);
-		return () => window.removeEventListener("scroll", scrollHandler);
-	}, [bottom]);
+const MainRep = () => {
 	return (
-		<div className="pb-12 mainView" id="phoneView">
+		<div className="pb-12 ">
 			<div className="pt-24 mx-auto max-w-7xl px-4  sm:px-6 flex flex-col justify-center items-center">
 				<div className="text-center">
 					<span className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -49,14 +22,12 @@ const Main = () => {
 					<p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl px-5"></p>
 				</div>
 			</div>
-			<div className="w-full mx-auto sticky top-24 flex justify-center items center">
+			<div className="w-full mx-auto top-24 flex justify-center items center" id="phoneView">
 				<div className="absolute">
 					<img
 						src={Phone}
 						alt="Logo"
-						className={`w-[250px] transition-width duration-500 ease-in-out ${
-							!phoneTop && "w-[500px]"
-						} ${!bottom && "w-[251px]"}`}
+						className={`w-[250px] transition-width duration-500 ease-in-out `}
 					/>
 				</div>
 				<div className={`absolute p-12 transition duration-500 ease-in`}>
@@ -82,9 +53,7 @@ const Main = () => {
 					<Link to="/publication">
 						<div className="text-center bounce2">
 							<h2
-								className={`text-base font-semibold text-indigo-600 tracking-wide uppercase ${
-									!phoneTop && "hidden"
-								}`}
+								className={`text-base font-semibold text-indigo-600 tracking-wide uppercase `}
 							>
 								&darr;
 							</h2>
@@ -94,11 +63,8 @@ const Main = () => {
 					</Link>
 				</div>
 			</div>
-			<div>
-				<Likes />
-			</div>
 		</div>
 	);
 };
 
-export default Main;
+export default MainRep;
