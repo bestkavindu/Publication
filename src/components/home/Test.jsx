@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import bubble from "../../image/pngwing.com.png";
 
 export default class Test extends Component {
 	state = {
@@ -44,25 +45,49 @@ export default class Test extends Component {
 
 	render() {
 		return (
-			<div className="App lg:px-48">
+			<div>
 				<div className="px-20 lg:px-48">
-					<div class="grid grid-cols-2 grid-rows-2 gap-4 text-center">
-						<div>01</div>
-						<div>09</div>
+				<div className="grid grid-cols-2 grid-rows-2 gap-4 text-center px-48">
+					<div className="mx-auto" style={{ paddingRight: this.state.scrollPostion * 2}}>
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
 					</div>
-                    <div class="grid grid-cols-2 grid-rows-2 gap-4 text-center">
-						<div>01</div>
-						<div>09</div>
-					</div>
-                    <div class="grid grid-cols-2 grid-rows-2 gap-4 text-center">
-						<div>01</div>
-						<div>09</div>
-					</div>
-                    <div class="grid grid-cols-2 grid-rows-2 gap-4 text-center">
-						<div>01</div>
-						<div>09</div>
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
 					</div>
 				</div>
+				<div className="grid grid-cols-2 grid-rows-2 gap-4 text-center px-48">
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+				</div>
+				<div className="grid grid-cols-2 grid-rows-2 gap-4 text-center px-48">
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+				</div>
+				<div className="grid grid-cols-2 grid-rows-2 gap-4 text-center px-48">
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+				</div>
+				<div className="grid grid-cols-2 grid-rows-2 gap-4 text-center px-48">
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+					<div className="mx-auto">
+						<img src={bubble} alt="bubble" className="w-[50px] h-[50px] " />
+					</div>
+				</div>
+			</div>
 			</div>
 		);
 	}
