@@ -220,13 +220,46 @@
 
 .bounce2 {
 	animation: bounce2 2s ease infinite;
-  }
-  @keyframes bounce2 {
-	  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	  40% {transform: translateY(-30px);}
-	  60% {transform: translateY(-15px);}
-  }
+}
+@keyframes bounce2 {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-30px);
+	}
+	60% {
+		transform: translateY(-15px);
+	}
+}
 
-.mainView{
+.mainView {
 	min-height: 2500px;
+}
+
+main {
+	height: 100vh;
+}
+
+.banner {
+	height: 100vh;
+	background: #bbe8f6;
+}
+
+.text {
+	position: relative;
+	color: #000;
+	font-weight: 900;
+	font-family: "futura-pt", futura, sans-serif;
+	font-size: 2rem;
+	line-height: 0.7;
+	white-space: nowrap;
+}
+
+.shapes{
+	background-image: url('https://images.unsplash.com/photo-1668977309586-50c338c48cf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
 }
