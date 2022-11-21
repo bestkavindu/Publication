@@ -17,7 +17,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const mainnav = [
   {
@@ -132,52 +132,48 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const [top, setTop] = useState(true);
-  useEffect(() => {
-    const scrollHandler = () => {
-      window.pageYOffset > 10 ? setTop(false) : setTop(true);
-    };
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, [top]);
-  return (
-    <Popover
-      className={`fixed w-full top-0 z-40 transition duration-300 ease-in-out ${
-        !top && "opacity-90 bg-white shadow-xl"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-none py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/">
-              <span className="sr-only">Workflow</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                alt="DIGITAL LIBRARY LOGO"
-              />
-            </Link>
-          </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
-              <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </Popover.Button>
-          </div>
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? "text-gray-900" : "text-gray-500",
-                      "group bg-transparent opacity-90 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
-                    )}
-                  >
-                    <Link to="/about">
-                      {" "}
-                      <span>About Us</span>
-                    </Link>
+	const [top, setTop] = useState(true);
+	useEffect(() => {
+		const scrollHandler = () => {
+		  window.pageYOffset > 10 ? setTop(false) : setTop(true)
+		};
+		window.addEventListener('scroll', scrollHandler);
+		return () => window.removeEventListener('scroll', scrollHandler);
+	  }, [top]);  
+	return (
+		<Popover className={`fixed w-full top-0 z-40 transition duration-300 ease-in-out ${!top && 'opacity-80 bg-white shadow-xl'}`}>
+			<div className="max-w-7xl mx-auto px-4 sm:px-6">
+				<div className="flex justify-between items-center border-b-2 border-none py-6 md:justify-start md:space-x-10">
+					<div className="flex justify-start lg:w-0 lg:flex-1">
+						<Link to="/">
+							<span className="sr-only">Workflow</span>
+							<img
+								className="h-8 w-auto sm:h-10"
+								src="/vite.svg"
+								alt="DIGITAL LIBRARY LOGO"
+							/>
+						</Link>
+					</div>
+					<div className="-mr-2 -my-2 md:hidden">
+						<Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+							<span className="sr-only">Open menu</span>
+							<MenuIcon className="h-6 w-6" aria-hidden="true" />
+						</Popover.Button>
+					</div>
+					<Popover.Group as="nav" className="hidden md:flex space-x-10">
+						<Popover className="relative">
+							{({ open }) => (
+								<>
+									<Popover.Button
+										className={classNames(
+											open ? "text-gray-900" : "text-gray-500",
+											"group bg-transparent opacity-90 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
+										)}
+									>
+										<Link to="/about">
+											{" "}
+											<span>About Us</span>
+										</Link>
 
                     <ChevronDownIcon
                       className={classNames(

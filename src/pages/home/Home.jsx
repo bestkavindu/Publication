@@ -1,14 +1,22 @@
 import React from "react";
-import AnimatedPage from "../../components/AnimatedPage";
-import Main from './../../components/home/Main';
+import AnimatedPageTwo from "../../components/AnimatedPageTwo";
+import Main from "./../../components/home/Main";
+import Background from './../../components/home/Background';
+import Text  from './../../components/home/Text';
+import MainRep from './../../components/home/MainRep';
+import Shapes from './../../components/home/Shapes';
 
 const Home = () => {
 	return (
-		<AnimatedPage>
-			<div className="main-bg h-full">
+		<div className="bg-white">
+			<AnimatedPageTwo>
+				<Background />
+				<div className=" md:hidden ">
+					<Text />
+				</div>
 				<Main />
-			</div>
-		</AnimatedPage>
+			</AnimatedPageTwo>
+		</div>
 	);
 };
 
