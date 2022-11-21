@@ -141,12 +141,12 @@ export default function PublicationIndex() {
                         </a>
                       </td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a
-                          href="#"
+                        <Link
+                          to={`/dashboard/edit-publication/${book.id}`}
                           className="text-green-600 hover:text-indigo-900"
                         >
                           Edit<span className="sr-only"></span>
-                        </a>
+                        </Link>
                       </td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                         <a

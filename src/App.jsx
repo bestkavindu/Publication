@@ -14,6 +14,7 @@ import Backend from "./layouts/BackendLayout";
 import DashboardIndex from "./pages/dashboard/publications/PublicationIndex";
 import CreatePublication from "./pages/dashboard/publications/CreatePublication";
 import PublicationIndex from "./pages/dashboard/publications/PublicationIndex";
+import EditPublication from "./pages/dashboard/publications/EditPublication";
 
 const App = () => {
   const location = useLocation();
@@ -37,6 +38,10 @@ const App = () => {
             <Route
               path="/dashboard/add-publication"
               element={<CreatePublication />}
+            />
+            <Route
+              path="/dashboard/edit-publication/:id"
+              element={<EditPublication />}
             />
           </Route>
         </Routes>
