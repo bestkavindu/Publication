@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 const Frontend = () => {
   const [showNav, setShowNav] = useState(true);
   const location = useLocation();
-  console.log(location);
   return (
     <div>
       {/* {showNav && <Navbar />} */}

@@ -11,38 +11,35 @@ import Login from "./pages/login/Login";
 import { AnimatePresence } from "framer-motion";
 import Frontend from "./layouts/Frontend";
 import Backend from "./layouts/BackendLayout";
-import DashboardIndex from "./pages/dashboard/publications/PublicationIndex";
-import CreatePublication from "./pages/dashboard/publications/CreatePublication";
-import PublicationIndex from "./pages/dashboard/publications/PublicationIndex";
+import DashboardIndex from "./pages/dashboard/publications";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const App = () => {
-  const location = useLocation();
-  return (
-    <div>
-      <AnimatePresence exitBeforeEnter>
-        <Routes key={location.pathname} location={location}>
-          <Route path="/" element={<Frontend />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/publication" element={<Publication />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-          </Route>
+	const location = useLocation();
+	return (
+		<div>
+			<ParallaxProvider>
+				<AnimatePresence exitBeforeEnter>
+					<Routes key={location.pathname} location={location}>
+						<Route path="/" element={<Frontend />}>
+							<Route path="/" element={<Home />} />
+							<Route path="/publication" element={<Publication />} />
+							<Route path="/contact" element={<Contact />} />
+							<Route path="/about" element={<About />} />
+						</Route>
 
-          <Route path="/dashboard" element={<Backend />}>
-            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-            <Route
-              path="/dashboard/view-publication"
-              element={<PublicationIndex />}
-            />
-            <Route
-              path="/dashboard/add-publication"
-              element={<CreatePublication />}
-            />
-          </Route>
-        </Routes>
-      </AnimatePresence>
-    </div>
-  );
+						<Route path="/dashboard" element={<Backend />}>
+							{/* <Route path="/dashboard" element={<Dashboard />} /> */}
+							<Route
+								path="/dashboard/view-publication"
+								element={<Dashboard />}
+							/>
+						</Route>
+					</Routes>
+				</AnimatePresence>
+			</ParallaxProvider>
+		</div>
+	);
 };
 
 export default App;
