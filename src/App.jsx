@@ -14,7 +14,6 @@ import Backend from "./layouts/BackendLayout";
 import CreatePublication from "./pages/dashboard/publications/CreatePublication";
 import PublicationIndex from "./pages/dashboard/publications/PublicationIndex";
 import EditPublication from "./pages/dashboard/publications/EditPublication";
-import DashboardIndex from "./pages/dashboard/publications";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 const App = () => {
